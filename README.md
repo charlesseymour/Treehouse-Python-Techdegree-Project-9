@@ -15,6 +15,6 @@ Students were given a Django project to improve.</p>
 # Testing
 
 - Run tests using coverage.py: `coverage run --source='.' manage.py test myapp`
-- Run report: `coverage report -m`
+- Generate report: `coverage report -m`
     
  
