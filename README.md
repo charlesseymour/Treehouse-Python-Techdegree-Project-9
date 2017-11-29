@@ -4,6 +4,10 @@
 
 Students were given a Django project to improve.</p>  
 
+# Python
+
+Version 3.6.0 
+
 # Installation
 
 - Download files.
