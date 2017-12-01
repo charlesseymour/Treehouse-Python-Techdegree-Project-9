@@ -1,13 +1,12 @@
 from django.contrib import messages
-from django.shortcuts import render, get_object_or_404, redirect
+from django.shortcuts import render, get_object_or_404
 from django.http import Http404, HttpResponseRedirect
 from django.utils import timezone
-from operator import attrgetter
-from datetime import datetime, date
+from datetime import date
 from django.core.exceptions import ObjectDoesNotExist
 from django.core.urlresolvers import reverse
-from .models import *
-from .forms import *
+from .models import Menu, Item
+from .forms import MenuForm
 
 
 def menu_list(request):
@@ -54,7 +53,6 @@ def create_new_menu(request):
 def edit_menu(request, pk):
     menu = get_object_or_404(Menu, pk=pk)
     form = MenuForm(instance=menu)
-    menus = Menu.objects.all()
     if request.method == 'POST':
         form = MenuForm(instance=menu, data=request.POST)
         if form.is_valid():

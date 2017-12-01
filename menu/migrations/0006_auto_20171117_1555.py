@@ -12,7 +12,8 @@ class Migration(migrations.Migration):
     ]
 
     operations = [
-		migrations.RenameField('Menu', 'new_created_date', 'created_date'),
-		migrations.RenameField('Menu', 'new_expiration_date', 'expiration_date'),
-		migrations.RenameField('Item', 'new_created_date', 'created_date')
+        migrations.RenameField('Menu', 'new_created_date', 'created_date'),
+        migrations.RenameField('Menu', 'new_expiration_date',
+                               'expiration_date'),
+        migrations.RenameField('Item', 'new_created_date', 'created_date')
     ]

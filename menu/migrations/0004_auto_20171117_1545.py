@@ -4,18 +4,20 @@ from __future__ import unicode_literals
 
 from django.db import migrations
 
+
 def datetime_to_date(apps, schema_editor):
-	Menu = apps.get_model('menu', 'Menu')
-	for menu in Menu.objects.all():
-		menu.new_created_date = menu.created_date.date()
-		if menu.expiration_date:
-			menu.new_expiration_date = menu.expiration_date.date()
-		menu.save()
-		
-	Item = apps.get_model('menu', 'Item')
-	for item in Item.objects.all():
-		item.new_created_date = item.created_date.date()
-		item.save()
+    Menu = apps.get_model('menu', 'Menu')
+    for menu in Menu.objects.all():
+        menu.new_created_date = menu.created_date.date()
+        if menu.expiration_date:
+            menu.new_expiration_date = menu.expiration_date.date()
+        menu.save()
+
+    Item = apps.get_model('menu', 'Item')
+    for item in Item.objects.all():
+        item.new_created_date = item.created_date.date()
+        item.save()
+
 
 class Migration(migrations.Migration):
 
@@ -24,5 +26,5 @@ class Migration(migrations.Migration):
     ]
 
     operations = [
-		migrations.RunPython(datetime_to_date)
+        migrations.RunPython(datetime_to_date)
     ]

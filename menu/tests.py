@@ -1,14 +1,10 @@
-from django.test import TestCase
 from django.core.urlresolvers import reverse
 from django.utils import timezone
 from django.contrib.auth.models import User
-
-from datetime import datetime, date
-
+from datetime import date
 from django_webtest import WebTest
 
 from .models import Menu, Item, Ingredient
-from .forms import MenuForm
 
 
 class MenuModelTests(WebTest):
