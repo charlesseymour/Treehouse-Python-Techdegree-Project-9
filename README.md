@@ -13,7 +13,7 @@ Version 3.6.0
 - Download files.
 - In the project directory install virtual environment: `python -m venv p9venv`
 - Activate virtual environment: in Windows `p9venv\Scripts\activate` or Posix `source p9venv/bin/activate`
-- Install requirements: `pip install -requirements.txt`
+- Install requirements: `pip install -r requirements.txt`
 - Run migrations: `python manage.py migrate`
 - Create superuser: `python manage.py createsuperuser`
 
