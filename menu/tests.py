@@ -23,7 +23,7 @@ class MenuModelTests(WebTest):
         item.save()
         ingredient = item.ingredients.create(name='chocolate')
         ingredient.save()
-        today = timezone.now().date()
+        today = timezone.localdate()
         self.assertEqual(menu.season, 'Summer 2018')
         self.assertEqual(menu.created_date, today)
         self.assertEqual(menu.expiration_date, '2018-08-31')
